@@ -10,7 +10,9 @@ using namespace std;
 int main(int, char **) {
   clog << "scratch 0a\n";
 
-  array<short, 10> header;
+  array<short, sizeof(int)> header;
+  header.fill(0);
+
   vector<int> ints;
   vector<char> out;
 
@@ -22,7 +24,7 @@ int main(int, char **) {
 
   for (const auto val : ints)
   {
-    size_t numOfDigits = static_cast<size_t>(ceil(log10(val)));
+    size_t numOfDigits = static_cast<size_t>(ceil((log2(val)+1)/8));
     ++header[numOfDigits];
   }
 
