@@ -11,7 +11,7 @@ $(PROJ) : $(OBJS)
 	$(CXX) $(LDFLAGS) $(OBJS) -o $(PROJ)
 
 run: $(PROJ)
-	cat in.dat | ./$(PROJ) ` cat args.dat ` | tee out.dat
+	gdb -x gdb.txt --args $(PROJ) ` cat args.dat ` | tee out.dat
 
 main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
