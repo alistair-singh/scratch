@@ -19,9 +19,9 @@ while true; do
     cpp )
       make run;;
       * )
-      echo dont know what to do with "$gear" files :\(
-      exit 1;;
+      echo dont know what to do with \"$gear\" files :\(
+      num=$(( $num-1 ))
   esac
   echo $num
-  $(( num=$num+1 ))
+  num=$(( $num+1 ))
 done

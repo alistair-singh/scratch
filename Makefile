@@ -1,20 +1,24 @@
 
 PROJ=$<R@t<#projname>
 
-CXXFLAGS=--std=c++11 -Werror -Weverything -g -Wno-c++98-compat
-LDFLAGS=
+CXXFLAGS=--std=c++11 -Werror -Weverything -g -Wno-c++98-compat \
+	 -Wno-c++98-compat-pedantic
+LDFLAGS=-g
 CXX=clang++
 
-OBJS=main.o
+CPP_FILES := $(wildcard src/*.cpp)
+OBJ_FILES := $(addprefix obj/,$(notdir $(CPP_FILES:.cpp=.o)))
 
-$(PROJ) : $(OBJS)
-	$(CXX) $(LDFLAGS) $(OBJS) -o $(PROJ)
+$(PROJ) : $(OBJ_FILES)
+	$(CXX) $(LDFLAGS) $(OBJ_FILES) -o $(PROJ)
 
 run: $(PROJ)
 	gdb -x gdb.txt --args $(PROJ) ` cat args.dat ` | tee out.dat
 
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
+obj/%.o: src/%.cpp
+	mkdir -p obj
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(PROJ) $(OBJS) out.dat
+	rm -rf $(PROJ) obj out.dat
+
