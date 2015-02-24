@@ -2,15 +2,13 @@
 
 while true; do
   gear=$( inotifywait -q --format %w%f -r -e close_write,moved_to . )
+  clear
   if [ "$gear" = "./dsg.sh" ]; then 
-    clear
     echo oil changed... :\)
     exec ./dsg.sh
   fi
 
   gear=${gear##*.}
-  echo $gear
-
   case $gear in
     /Makefile )
       make run;;

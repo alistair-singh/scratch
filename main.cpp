@@ -8,7 +8,7 @@
 using namespace std;
 
 int main(int, char **) {
-  clog << "scratch 0a\n";
+  clog << "$<R@t<#projname> 0a\n";
 
   array<short, sizeof(int)> header;
   header.fill(0);

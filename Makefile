@@ -1,5 +1,5 @@
 
-PROJ=scratch
+PROJ=$<R@t<#projname>
 
 CXXFLAGS=--std=c++11 -Werror -Weverything -g -Wno-c++98-compat
 LDFLAGS=
