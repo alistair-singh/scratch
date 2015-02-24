@@ -22,9 +22,13 @@ fi
 echo $projdir
 mkdir $projdir
 cp -R ~/proj/scratch/* $projdir
-sed -e 's/\$<R@t<#projname>/'$1'/g' -i $( find $projdir/* )
+
+files=$( find $projdir/* )
+sed -e 's/\$<R@t<#projname>/'$1'/g' -i $files
 
 cd $projdir
 git init
+git add *
+git commit -m "initial"
 echo from scratch ...with love...
 
