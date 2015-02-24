@@ -23,7 +23,8 @@ echo $projdir
 mkdir $projdir
 cp -R ~/proj/scratch/* $projdir
 
-files=$( find $projdir/* )
+files=$( find $projdir* -type f )
+echo $files
 sed -e 's/\$<R@t<#projname>/'$1'/g' -i $files
 
 cd $projdir

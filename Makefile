@@ -13,7 +13,7 @@ $(PROJ) : $(OBJ_FILES)
 	$(CXX) $(LDFLAGS) $(OBJ_FILES) -o $(PROJ)
 
 run: $(PROJ)
-	gdb -x gdb.txt --args $(PROJ) ` cat args.dat ` | tee out.dat
+	gdb -x gdb.txt --args $(PROJ) ` cat args.dat ` 2>&1 | tee out.dat
 
 obj/%.o: src/%.cpp
 	mkdir -p obj

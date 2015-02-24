@@ -22,9 +22,11 @@ int main(int, char **) {
   copy(iit, eos, back_inserter(ints));
   sort(begin(ints), end(ints));
 
-  for (const auto val : ints)
-  {
-    size_t numOfDigits = static_cast<size_t>(ceil((log2(val)+1)/8));
+  for (const auto val : ints) {
+    if (val > 0)
+      size_t numOfDigits = static_cast<size_t>(ceil((log2(val) + 1) / 8)) - 1;
+    else
+      numOfDigits = 0;
     ++header[numOfDigits];
   }
 
