@@ -1,7 +1,7 @@
 
 PROJ=$<R@t<#projname>
 
-CXXFLAGS=--std=c++11 -Werror -Weverything -g -Wno-c++98-compat \
+CXXFLAGS=--std=c++14 -Werror -Weverything -g -Wno-c++98-compat \
 	 -Wno-c++98-compat-pedantic
 LDFLAGS=-g
 CXX=clang++
@@ -13,7 +13,7 @@ $(PROJ) : $(OBJ_FILES)
 	$(CXX) $(LDFLAGS) $(OBJ_FILES) -o $(PROJ)
 
 run: $(PROJ)
-	gdb -x gdb.txt --args $(PROJ) ` cat args.dat ` 2>&1 | tee out.dat
+	gdb -q -x gdb.txt --args $(PROJ) ` cat args.dat ` 2>&1 | tee out.dat
 
 obj/%.o: src/%.cpp
 	mkdir -p obj
