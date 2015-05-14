@@ -23,10 +23,9 @@ int main(int, char **) {
   sort(begin(ints), end(ints));
 
   for (const auto val : ints) {
+    size_t numOfDigits = 0; 
     if (val > 0)
-      size_t numOfDigits = static_cast<size_t>(ceil((log2(val) + 1) / 8)) - 1;
-    else
-      numOfDigits = 0;
+      numOfDigits = static_cast<size_t>(ceil((log2(val) + 1) / 8)) - 1;
     ++header[numOfDigits];
   }
 
