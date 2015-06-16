@@ -23,5 +23,5 @@ obj/%.o: src/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(PROJ) obj out.dat
+	rm -rf $(PROJ) obj bin
 
