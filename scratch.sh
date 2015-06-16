@@ -22,7 +22,7 @@ fi
 echo $projdir
 mkdir $projdir
 cp -R ~/proj/scratch/* $projdir
-cp -R ~/proj/scratch/.* $projdir
+cp -R ~/proj/scratch/.gitignore $projdir
 
 files=$( find $projdir* -type f )
 echo $files
