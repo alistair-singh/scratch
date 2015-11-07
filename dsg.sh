@@ -15,9 +15,9 @@ while true; do
   gear=${gear##*.}
   case $gear in
     /Makefile )
-      make run;;
+      make test;;
     cpp )
-      make run;;
+      make test;;
       * )
       echo dont know what to do with \"$gear\" files :\(
       num=$(( $num-1 ))

@@ -13,8 +13,8 @@ if [ -z $1 ]; then
 fi
 
 scratchdir=~/proj/scratch
-
 projdir=~/proj/$1/
+
 if [ -z $2 ]; then
   projtype=cpp
 else
