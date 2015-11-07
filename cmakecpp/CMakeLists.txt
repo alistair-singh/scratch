@@ -28,6 +28,10 @@ elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Werror -Wno-long-long -Wpedantic")
 endif()
 
+# Includes Catch in the project:
+add_subdirectory(external/catch)
+include_directories(${CATCH_INCLUDE_DIR})
+
 add_subdirectory (src)
 add_subdirectory (test)
 
