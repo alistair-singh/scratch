@@ -1,8 +1,8 @@
 
-#include "skel.hh"
+#include "file.hh"
 
 #include <iostream>
 
-void skel::skel() {
-  std::cout << "skel::skel" << std::endl;
+void file::file() {
+  std::cout << "file::file" << std::endl;
 }

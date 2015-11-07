@@ -7,8 +7,8 @@
   #define DllExport   
 #endif
 
-namespace skel {
+namespace file {
 
-DllExport void skel();
+DllExport void file();
 
 }

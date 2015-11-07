@@ -32,4 +32,4 @@ add_subdirectory (src)
 add_subdirectory (test)
 
 enable_testing ()
-add_test (NAME Tests COMMAND Test$<R@t<#projname>)
+add_test (NAME Tests COMMAND Test)

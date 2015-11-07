@@ -1,10 +1,10 @@
 
 #include <iostream>
-#include "skel.hh"
+#include "file.hh"
 
 int main(int, char**) {
   std::cout << "$<R@t<#projname>\n";
-  skel::skel();
+  file::file();
   return 0;
 }
 
